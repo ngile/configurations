@@ -30,10 +30,9 @@ font pango: System San Francisco Display 10
 floating_modifier $mod
 #new_window 1pixel 
 #new_float 1pixel
+new_window pixel 2
+new_float pixel 2
 
-for_window [class="mpv"] floating enable
-for_window [class="mpv"] border normal
-for_window [class="Skype"] floating enable
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
@@ -168,23 +167,6 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 # resize mode
 
-set $bg-color 	         #2f343f
-set $inactive-bg-color   #2f343f
-set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
-
-# window colors
-#                       border              background         text                 indicator
-#client.focused          $bg-color           $bg-color          $text-color          
-#client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color 
-#client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color 
-#client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          
-
-#client.focused #D4D5D6 #D4D5D6 #6F7782
-#client.unfocused #bac4cc #F0F1F2 #AAB6C7
-#client.focused_inactive #51c4d4 #ecedee #818996
-#client.urgent #51c4d4 #ecedee #818996
 
 client.focused #1F1F1F #505050 #BBBBBB #4F4F4F
 client.focused_inactive #1A1A1A #1A1A1A #424242 #121212
@@ -195,9 +177,10 @@ client.background #121212
 
 
 
-hide_edge_borders both
+hide_edge_borders smart
 
 bar {
+binding_mode_indicator yes
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
         	colors {
 
@@ -208,28 +191,26 @@ bar {
             active_workspace #080808 #080808 #797979 
             inactive_workspace #080808 #080808 #4F4F4F
             urgent_workspace #080808 #080808 #EA4C59
-
-
-#        background #DEDFE3
-#        statusline #767E8A
-#        separator #51c4d4
-#
-#        focused_workspace  #777F8B #777F8B #ecedee
-#        active_workspace   #777F8B #777F8B #ecedee
-#        inactive_workspace #DEDFE3 #DEDFE3 #767E8A
-#        urgent_workspace   #DEDFE3 #DEDFE3 #767E8A
-#
-
-#		    background $bg-color
-#	    	separator #757575
-#		#                  border             background         text
-#		focused_workspace  $bg-color          $bg-color          $text-color
-#		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-#		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
 	}
 }
 
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 #exec --no-startup-id nitrogen --restore; sleep 1; compton --config /home/georgi/.compton.conf
 exec --no-startup-id nm-applet
-exec --no-startup-id blueman
+exec --no-startup-id blueman-applet
+
+bindsym $mod+shift+x exec i3lock --color "000000"
+set $mode_launcher Launch: [c]yromium [e]pcmanf 
+bindsym $mod+o mode "$mode_launcher"
+
+mode "$mode_launcher" {
+    bindsym c exec chromium
+    bindsym e exec pcmanfm
+
+    bindsym Esc mode "default"
+    bindsym Return mode "default"
+}
+popup_during_fullscreen smart
+
+binding_mode_indicator yes
+
