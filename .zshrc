@@ -20,6 +20,10 @@ SAVEHIST=10000
 bindkey -v
 bindkey -e
 bindkey '^R' history-incremental-search-backward
+
+bindkey '^[[1;5D' backward-word
+bindkey '^[[1;5C' forward-word
+
 HOSTNAME="`hostname`"
 
 parse_git_branch () {
@@ -45,14 +49,8 @@ PROMPT='%F{brown}%n%F{yellow}:%F{brown}%c %F{yellow}${vcs_info_msg_0_}%(?/%F{gre
 #autoload colors; colors
 #export PS1="%{$fg[red]%}%n%{$reset_color%}:%{$fg[green]%}%c%{$reset_color%} \${vcs_info_msg_0_}$ "
 
-alias chrome="chromium"
-alias ls="ls --color=auto"
-alias d-ex="docker exec -t -i "
-alias d-clean-img="docker rmi -f $(docker images -q -a -f dangling=true)"
-alias d-st='docker ps --format "table {{ .Names }}\t{{.ID}}\t{{ .Status }}" -a'
-alias d-ip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
-dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
 
+alias ls="ls --color=auto"
 #bindkey \\C-R history-incremental-search-backward
 #bindkey "^A" beginning-of-line # Home
 #bindkey "^E" end-of-line # End
@@ -68,4 +66,4 @@ zstyle :compinstall filename '/home/gkostadi/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-export PATH=/opt/chefdk/bin:/home/georgi/Programs/node/bin:$PATH
+export PATH=$HOME/Programs/bin:/home/georgi/Programs/nodejs/bin:$PATH
