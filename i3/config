@@ -43,6 +43,7 @@ bindsym $mod+Shift+q kill
 #bindsym $mod+d exec dmenu_run
 bindsym $mod+d exec rofi -show run -font "terminus 12"
 bindsym $mod+Shift+d exec rofi -show drun -font "terminus 12"
+bindsym $mod+Tab exec rofi -show window -font "terminus 12"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
