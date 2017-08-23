@@ -180,37 +180,39 @@ client.background #121212
 
 hide_edge_borders smart
 
-#bar {
-#binding_mode_indicator yes
-#        status_command i3blocks -c ~/.config/i3/i3blocks.conf
-#        	colors {
-#
-#            background #080808 
-#            statusline #808080
-#            separator #808080
-#            focused_workspace #080808 #222222 #808080
-#            active_workspace #080808 #080808 #797979 
-#            inactive_workspace #080808 #080808 #4F4F4F
-#            urgent_workspace #080808 #080808 #EA4C59
-#	}
-#}
-
-
-
 bar {
-		status_command i3blocks -c ~/.config/i3/i3blocks.conf
-        font pango: Terminus, awesome 9
+    binding_mode_indicator yes
+    font pango: Terminus, awesome 9
+    status_command i3blocks -c ~/.config/i3/i3blocks.conf
+    position bottom
+        colors {
 
-colors {
-	   		background #383c4a
-			statusline #d3dae3
-			separator  #8396af
-			#	               border  backgr  text
-			focused_workspace  #585e74 #585e74 #ffffff
-			inactive_workspace #21242b #21242b #7c818c
-			urgent_workspace   #5294e2 #5294e2 #ffffff
-	   }
+        background #080808 
+        statusline #808080
+        separator #808080
+        focused_workspace #080808 #222222 #ffffff
+        active_workspace #080808 #080808 #797979 
+        inactive_workspace #080808 #080808 #4F4F4F
+        urgent_workspace #080808 #080808 #EA4C59
 }
+}
+
+
+
+#bar {
+#		status_command i3blocks -c ~/.config/i3/i3blocks.conf
+#        font pango: Terminus, awesome 9
+#
+#colors {
+#	   		background #383c4a
+#			statusline #d3dae3
+#			separator  #8396af
+#			#	               border  backgr  text
+#			focused_workspace  #585e74 #585e74 #ffffff
+#			inactive_workspace #21242b #21242b #7c818c
+#			urgent_workspace   #5294e2 #5294e2 #ffffff
+#	   }
+#}
 
 
 
