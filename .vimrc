@@ -66,9 +66,19 @@ set smarttab
 set encoding=utf8
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
-colo darkgit
+" colo zenburn
+" colo distill
+colo wombat256mod
+
+
+set nu
 " colo smpl
 set background=dark
+if &term =~ '256color'
+    " Disable Background Color Erase (BCE) so that color schemes
+    " work properly when Vim is used inside tmux and GNU screen.
+    set t_ut=
+endif
 
 set autoindent
 set backspace=indent,eol,start
@@ -79,9 +89,37 @@ set pastetoggle=<F2>
 "" set clipboard=unnamed
 
 
+
+" PEP8
+"
+let g:flake8_show_in_gutter=1
+let g:flake8_quickfix_height=7
+
+" map <C-l> :call flake8#Flake8UnplaceMarkers()<esc>
+" autocmd BufWritePost *.py call Flake8()
+autocmd BufNewFile,BufRead *.json set ft=javascript
+au FileType python map <silent> <leader>br oimport pdb; pdb.set_trace()<esc>
+au FileType python map <silent> <leader>BR Oimport pdb; pdb.set_trace()<esc>
+"map <leader>\  :norm x<esc>
+"map <C-\>  :norm i#<esc>
+
+
+" Commenting blocks of code.
+autocmd FileType c,cpp,java,scala,groovy let b:comment_leader = '// '
+autocmd FileType sh,ruby,python   let b:comment_leader = '# '
+autocmd FileType conf,fstab       let b:comment_leader = '# '
+autocmd FileType tex              let b:comment_leader = '% '
+autocmd FileType mail             let b:comment_leader = '> '
+autocmd FileType vim              let b:comment_leader = '" '
+noremap <C-\> :<C-B>silent<C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
+noremap <leader>\  :<C-B>silent<C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
+" noremap <silent> ,cc :<C-B>silent<C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
+" noremap <silent> ,cu :<C-B>silent<C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
+
 " Keys
 " QUIT
 let mapleader=","
+map <F3> :NERDTreeToggle<CR>
 map <leader>e :q<CR> "quit
 map <leader>q :qa!<cr>
 map <leader>l :nohl<cr>
@@ -101,3 +139,7 @@ func! DeleteTrailingWS()
   exe "normal `z"
 endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
+
+if has("autocmd")
+      au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+  endif
