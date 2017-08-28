@@ -71,7 +71,16 @@ set ffs=unix,dos,mac
 colo wombat256mod
 
 
-set nu
+set rnu
+
+set cursorcolumn
+set cursorline
+set scrolloff=2
+set makeprg=python\ %
+
+set timeout timeoutlen=3000 ttimeoutlen=100
+
+
 " colo smpl
 set background=dark
 if &term =~ '256color'
@@ -88,7 +97,10 @@ set backspace=indent,eol,start
 set pastetoggle=<F2>
 "" set clipboard=unnamed
 
-
+augroup vimrc
+  au BufReadPre * setlocal foldmethod=indent
+  au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
+augroup END
 
 " PEP8
 "
@@ -99,10 +111,10 @@ let g:flake8_quickfix_height=7
 " autocmd BufWritePost *.py call Flake8()
 autocmd BufNewFile,BufRead *.json set ft=javascript
 au FileType python map <silent> <leader>br oimport pdb; pdb.set_trace()<esc>
-au FileType python map <silent> <leader>BR Oimport pdb; pdb.set_trace()<esc>
 "map <leader>\  :norm x<esc>
 "map <C-\>  :norm i#<esc>
 
+nnoremap <F9> :compile pyunit<CR>:make<CR>
 
 " Commenting blocks of code.
 autocmd FileType c,cpp,java,scala,groovy let b:comment_leader = '// '
@@ -113,24 +125,24 @@ autocmd FileType mail             let b:comment_leader = '> '
 autocmd FileType vim              let b:comment_leader = '" '
 noremap <C-\> :<C-B>silent<C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
 noremap <leader>\  :<C-B>silent<C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
-" noremap <silent> ,cc :<C-B>silent<C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
-" noremap <silent> ,cu :<C-B>silent<C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
 
 " Keys
 " QUIT
 let mapleader=","
-map <F3> :NERDTreeToggle<CR>
 map <leader>e :q<CR> "quit
 map <leader>q :qa!<cr>
 map <leader>l :nohl<cr>
 " Moving lines
 " nnoremap <S-j> :m .+1<CR>
 " nnoremap <S-k> :m .-2<CR>
-nnoremap <S-k> :m .+1<CR>==
-nnoremap <S-j> :m .-2<CR>==
+nnoremap <S-j> :m .+1<CR>==
+nnoremap <S-k> :m .-2<CR>==
 nnoremap <S-DOWN> :m .+1<CR>==
 nnoremap <S-UP> :m .-2<CR>==
+noremap <leader><Tab> <C-W><C-W>
 
+
+let g:airline#extensions#tabline#enabled = 1
 
 " Delete trailing white space on save, useful for Python and CoffeeScript ;)
 func! DeleteTrailingWS()
