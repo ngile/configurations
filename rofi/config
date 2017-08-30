@@ -1,0 +1,6 @@
+rofi.color-normal:                   #90080808, #c3c3c3, #90080808, #222222, #ffffff
+rofi.color-urgent:                   argb:02d303b, #cc6666, argb:e52d303b, #a54242, #7c818c
+rofi.color-active:                   #90080808, #ffffff, #90080808, #9080808, #000000
+rofi.color-window:                   #90080808, #ffffff, #080808
+rofi.separator-style:                solid
+rofi.font:							 terminus 13

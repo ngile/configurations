@@ -1,3 +1,9 @@
+" Disable arrow keys
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
 " Auto reload vimrc
 autocmd! bufwritepost .vimrc source %
 " Auto install plugins
@@ -72,11 +78,13 @@ colo wombat256mod
 
 
 set rnu
+set nu
 
 set cursorcolumn
 set cursorline
 set scrolloff=2
 set makeprg=python\ %
+set path+=**
 
 set timeout timeoutlen=3000 ttimeoutlen=100
 
@@ -116,15 +124,9 @@ au FileType python map <silent> <leader>br oimport pdb; pdb.set_trace()<esc>
 
 nnoremap <F9> :compile pyunit<CR>:make<CR>
 
-" Commenting blocks of code.
-autocmd FileType c,cpp,java,scala,groovy let b:comment_leader = '// '
-autocmd FileType sh,ruby,python   let b:comment_leader = '# '
-autocmd FileType conf,fstab       let b:comment_leader = '# '
-autocmd FileType tex              let b:comment_leader = '% '
-autocmd FileType mail             let b:comment_leader = '> '
-autocmd FileType vim              let b:comment_leader = '" '
-noremap <C-\> :<C-B>silent<C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
-noremap <leader>\  :<C-B>silent<C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
+autocmd FileType python setlocal commentstring=#\ %s
+autocmd FileType sh setlocal commentstring=#\ %s
+autocmd FileType vim setlocal commentstring=\"\ %s
 
 " Keys
 " QUIT
