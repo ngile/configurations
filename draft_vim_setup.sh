@@ -10,5 +10,5 @@ curl https://raw.githubusercontent.com/vim-scripts/groovyindent/master/indent/gr
 cd ~/.vim/bundle
 for i in ${repos}
 do
-        git clone ${i}
+    git clone ${i}
 done
