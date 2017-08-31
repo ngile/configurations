@@ -1,6 +1,6 @@
 #!/bin/bash
 
-repos="https://github.com/jiangmiao/auto-pairs.git https://github.com/davidhalter/jedi-vim.git https://github.com/vim-airline/vim-airline https://github.com/jiangmiao/auto-pairs.git https://github.com/ervandew/supertab.git https://github.com/tpope/vim-commentary.git https://github.com/tpope/vim-surround.git https://github.com/nvie/vim-flake8.git https://github.com/heavenshell/vim-pydocstring.git"
+repos="https://github.com/jiangmiao/auto-pairs.git https://github.com/davidhalter/jedi-vim.git https://github.com/vim-airline/vim-airline https://github.com/jiangmiao/auto-pairs.git https://github.com/ervandew/supertab.git https://github.com/tpope/vim-commentary.git https://github.com/tpope/vim-surround.git https://github.com/nvie/vim-flake8.git https://github.com/heavenshell/vim-pydocstring.git https://github.com/vim-airline/vim-airline-themes https://github.com/SirVer/ultisnips.git https://github.com/Glench/Vim-Jinja2-Syntax.git"
 
 mkdir -p ~/.vim/{autoload,bundle,colors,ftplugin,indent}
 curl https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim -o ~/.vim/autoload/pathogen.vim
