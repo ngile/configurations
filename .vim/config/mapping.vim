@@ -16,7 +16,7 @@ nnoremap <F9> :compile pyunit<CR>:make<CR>
 let mapleader=","
 map <leader>e :q<CR> "quit
 map <leader>q :qa!<cr>
-map <leader>l :nohl<cr>
+map <leader>l :nohl<cr>\|:call flake8#Flake8UnplaceMarkers() <cr>
 " Moving lines
 nnoremap <S-j> :m .+1<CR>==
 nnoremap <S-k> :m .-2<CR>==
