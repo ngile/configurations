@@ -5,7 +5,6 @@ repos="https://github.com/jiangmiao/auto-pairs.git https://github.com/davidhalte
 mkdir -p ~/.vim/{autoload,bundle,colors,ftplugin,indent}
 curl https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim -o ~/.vim/autoload/pathogen.vim
 curl https://raw.githubusercontent.com/vim-scripts/wombat256.vim/master/colors/wombat256mod.vim -o ~/.vim/colors/wombat256mod.vim
-curl https://raw.githubusercontent.com/ngile/configurations/master/.vimrc -o ~/.vimrc
 curl https://raw.githubusercontent.com/vim-scripts/groovyindent/master/indent/groovy.vim -o ~/.vim/indent/groovy.vim
 cd ~/.vim/bundle
 for i in ${repos}
