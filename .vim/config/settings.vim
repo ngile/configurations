@@ -1,11 +1,11 @@
 " Auto reload vimrc
 autocmd! bufwritepost .vimrc source %
 " Auto install plugins
-execute pathogen#infect()
-
-
-filetype plugin on
-filetype plugin indent on
+"execute pathogen#infect()
+"
+"
+"filetype plugin on
+"filetype plugin indent on
 
 syntax on
 set laststatus=2
