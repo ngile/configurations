@@ -4,10 +4,10 @@ no <Down> <NOP>
 no <Left> <NOP>
 no <Right> <NOP>
 
-ino <Up> <inoP>
-ino <Down> <inoP>
-ino <Left> <inoP>
-ino <Right> <inoP>
+ino <Up> <NOP>
+ino <Down> <NOP>
+ino <Left> <NOP>
+ino <Right> <NOP>
 
 " Run python with make
 nnoremap <F9> :compile pyunit<CR>:make<CR>
