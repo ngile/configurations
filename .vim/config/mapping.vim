@@ -1,4 +1,6 @@
-" Disable arrow keys
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                Disable arrow keys in normal and insert mode                "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 no <Up> <NOP>
 no <Down> <NOP>
 no <Left> <NOP>
@@ -9,15 +11,37 @@ ino <Down> <NOP>
 ino <Left> <NOP>
 ino <Right> <NOP>
 
-" Run python with make
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                    Run python program with make command                    "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <F9> :compile pyunit<CR>:make<CR>
 
-" Keys
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                            auto-centar mappigns                            "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap G Gzz
+nmap n nzz
+nmap N Nzz
+nmap } }zz
+nmap { {zz
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                Custom maps                                 "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader=","
 map <leader>e :q<CR> "quit
 map <leader>q :qa!<cr>
 map <leader>l :nohl<cr>\|:call flake8#Flake8UnplaceMarkers() <cr>
-" Moving lines
+noremap <leader><Tab> <C-W><C-W>
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                Moving lines                                "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <S-j> :m .+1<CR>==
 nnoremap <S-k> :m .-2<CR>==
-noremap <leader><Tab> <C-W><C-W>
+
+

@@ -1,4 +1,6 @@
-" Delete trailing white space on save, useful for Python and CoffeeScript ;)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                    Delete trailing white space on save                     "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 func! DeleteTrailingWS()
   exe "normal mz"
   %s/\s\+$//ge

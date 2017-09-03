@@ -11,3 +11,5 @@ for i in ${repos}
 do
     git clone ${i}
 done
+
+curl https://raw.githubusercontent.com/honza/vim-snippets/master/pythonx/vimsnippets.py -o ~/.vim/bundle/ultisnips/pythonx/vimsnippets.py
