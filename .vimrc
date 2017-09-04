@@ -18,6 +18,8 @@ Plugin 'SirVer/ultisnips'
 Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'scrooloose/nerdtree'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'ervandew/supertab'
+Plugin 'phenomenes/ansible-snippets'
 call vundle#end()           
 filetype plugin indent on    
 
