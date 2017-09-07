@@ -1,5 +1,5 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                     Load custom mappings and functions                     "
+"                     Install vim plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
 filetype off
@@ -18,8 +18,10 @@ Plugin 'SirVer/ultisnips'
 Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'scrooloose/nerdtree'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'pearofducks/ansible-vim'
 Plugin 'ervandew/supertab'
-Plugin 'phenomenes/ansible-snippets'
+Plugin 'kien/ctrlp.vim'
+Plugin 'iamcco/markdown-preview.vim'
 call vundle#end()           
 filetype plugin indent on    
 
@@ -34,11 +36,15 @@ source ~/.vim/config/functions.vim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                               Plugins config                               "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Markdown preview
+let g:mkdp_path_to_chrome = "firefox-esr"
+let g:mkdp_auto_open = 1
+
 " Snippets
 let g:UltiSnipsExpandTrigger="<s-tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsEditSplit="vertical"
+" let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsSnippetDirectories = ['.vim/UltiSnips', 'UltiSnips'] 
 
 " Airline theme config
@@ -56,4 +62,5 @@ autocmd FileType python setlocal commentstring=#\ %s
 autocmd FileType sh setlocal commentstring=#\ %s
 autocmd FileType vim setlocal commentstring=\"\ %s
 
-
+" Ansible plugin
+let g:ansible_unindent_after_newline = 1
