@@ -19,7 +19,6 @@ Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'scrooloose/nerdtree'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'pearofducks/ansible-vim'
-Plugin 'ervandew/supertab'
 Plugin 'kien/ctrlp.vim'
 Plugin 'iamcco/markdown-preview.vim'
 call vundle#end()           
