@@ -67,6 +67,7 @@ set encoding=utf8
 set ffs=unix,dos,mac
 colo wombat256mod
 
+
 set rnu
 set nu
 
@@ -92,9 +93,22 @@ set backspace=indent,eol,start
 set pastetoggle=<F2>
 
 " Auto foldding
-augroup vimrc
-  au BufReadPre * setlocal foldmethod=indent
-  au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
-augroup END
+" augroup vimrc
+"   au BufReadPre * setlocal foldmethod=indent
+"   au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
+" augroup END
+
+autocmd FileType text,markdown call TextConfig()
+
+function TextConfig()
+    set spell
+    hi SpellBad cterm=underline ctermfg=yellow
+    source ~/.vim/abbrev.vim
+endfunction
 
 
+
+
+
+
+hi Normal guibg=NONE ctermbg=NONE
