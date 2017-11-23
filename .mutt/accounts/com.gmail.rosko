@@ -1,0 +1,25 @@
+set imap_user = 'rosko@gmail.com'
+source "gpg -dq $HOME/.mutt/mutt.pass.gpg |"
+set imap_pass = $my_pass
+set spoolfile = +INBOX
+set folder = imaps://imap.gmail.com/
+set record = /dev/null
+set postponed = "+[Gmail]/Drafts"
+set imap_check_subscribed
+set header_cache = ~/.mutt/gmail/com.gmail.rosko/cache/headers            
+set message_cachedir = ~/.mutt/gmail/com.gmail.rosko/cache/bodies         
+set alias_file = "~/.mutt/gmail/com.gmail.rosko/alias"
+set sort_alias = alias
+set reverse_alias = yes
+source $alias_file
+
+
+macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
+macro index gs "<change-folder>=[Gmail]/Sent Mail<enter>" "Go to sent mail"
+
+set from = rosko@gmail.com
+set realname = 'Rosko Roskov'
+set ssl_force_tls = yes
+set smtp_url = smtps://$imap_user@smtp.gmail.com
+set smtp_pass = $my_pass
+set ssl_starttls = yes

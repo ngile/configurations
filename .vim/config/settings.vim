@@ -106,9 +106,4 @@ function TextConfig()
     source ~/.vim/abbrev.vim
 endfunction
 
-
-
-
-
-
 hi Normal guibg=NONE ctermbg=NONE

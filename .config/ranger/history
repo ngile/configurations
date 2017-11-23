@@ -1,0 +1,50 @@
+shell 
+filter con
+filter ra
+filter p
+filter Wall
+filter .conf
+filter ran
+filter Wal
+cd /home/georgi/.config/ranger/
+filter Dow
+rename 16.jpg
+filter tor
+mkdir Arrow_6
+rename arrow.603.hdtv-lol.mkv
+rename arrow.605.hdtv-lol.mkv
+rename arrow.601.hdtv-lol.srt
+rename arrow.602.hdtv-lol.srt
+rename arrow.603.hdtv-lol.srt
+rename arrow.604.hdtv-lol.srt
+rename OtherLife.2017.1080p.Netflix.WEB-DL.DD5.1.x264-QOQ.srt
+filter Wi
+open_with 
+filter Luc
+rename Lucifer.S03E06.WEB.x264-TBS.srt
+rename Lucifer.S03E05.HDTV.x264-LOL[eztv].srt
+save_copy_buffer
+filter qu
+cd .config/qutebrowser/
+filter .loca
+filter .config
+filter i3
+search Wall
+filter Wa
+filter 
+search Pro
+search robo
+search .ssh
+
+filter .mutt
+mkdir 
+open_with 1
+cd .fonts/
+cd .config/ranger
+set vcs_aware
+set vcs_aware true
+set vcs_backend_git
+set vcs_backend_git local
+redraw_window 
+cd .mutt
+delete

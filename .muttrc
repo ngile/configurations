@@ -1,0 +1,61 @@
+folder-hook 'accounts/com.gmail.rosko' source '~/.mutt/accounts/com.gmail.rosko'
+source '~/.mutt/accounts/com.gmail.rosko'
+
+set sort=threads
+#set sort_browser=date
+# set sort_aux=reverse-last-date-received
+set sort_aux = last-date-received
+
+set editor = vim
+set sleep_time=0
+set timeout = "300"
+set mail_check = "600"
+set mailcap_path = ~/.mutt/mailcap
+set date_format="%d/%m/%y %I:%M"
+set index_format="%2C %Z %d %-15.15F %s (%-4.4c)"
+
+auto_view text/html
+#alternative_order text/plain text/enriched text/html
+alternative_order text/html text/plain text/enriched 
+
+mono bold bold
+mono underline underline
+mono indicator reverse
+
+
+# colors
+color normal		color253	color234 # mod
+color indicator    	color230     	color238
+color status       	color101     	color16
+color tree         	color208      	color234 
+color signature    	color102      	color234 
+color message      	color253      	default
+color attachment	color253      	color234 
+color error        	color30      	color234 
+color tilde        	color130     	default 
+color search       color100     default 
+color markers      color138     default 
+color hdrdefault    color30     color233 
+color header        color132        color233    '^date:'
+color header        color153        color233    '^(to|cc|bcc):'
+color header        color120        color233    '^from:'
+color header        color178        color233    '^subject:'
+color header        color31         color233    '^user-agent:'
+color header        color29         color233    '^reply-to:'
+
+color body brightred default [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
+color body brightblue default (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+
+color normal default default
+
+bind editor <space> noop
+bind index G last-entry
+bind index gg first-entry
+bind index d half-down
+bind index u half-up
+bind index D delete-message
+bind index U undelete-message
+bind index F search 
+bind index R group-reply
+bind index "^" imap-fetch-mail
+
+macro index <f2> '<sync-mailbox><enter-command>source ~/.mutt/accounts/com.gmail.rosko<enter><change-folder>!<enter>'
