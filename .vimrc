@@ -71,3 +71,9 @@ let g:ansible_unindent_after_newline = 1
 " CTRLP
 map <leader>b :CtrlPBuffer<cr>
 
+" NERDTree
+nmap <leader>e :NERDTreeToggle<CR>
+
+" Tagbar
+nmap <leader>t :TagbarToggle<CR>
+

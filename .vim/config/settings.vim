@@ -100,7 +100,7 @@ set pastetoggle=<F2>
 
 autocmd FileType text,markdown call TextConfig()
 
-function TextConfig()
+function! TextConfig()
     set spell
     hi SpellBad cterm=underline ctermfg=yellow
     source ~/.vim/abbrev.vim
