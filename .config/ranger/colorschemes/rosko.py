@@ -28,6 +28,6 @@ class Scheme(Default):
                     bg = 111
                     fg = 7
                 else:
-                    fg = 235
+                    fg = 245
 
         return fg, bg, attr
