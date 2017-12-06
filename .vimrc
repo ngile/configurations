@@ -15,12 +15,15 @@ Plugin 'tpope/vim-surround'
 Plugin 'nvie/vim-flake8'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'SirVer/ultisnips'
-Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'scrooloose/nerdtree'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'iamcco/markdown-preview.vim'
+Plugin 'puppetlabs/puppet-syntax-vim'
+Plugin 'Rykka/riv.vim'
+Plugin 'yuttie/comfortable-motion.vim'
+Plugin 'majutsushi/tagbar'
 call vundle#end()           
 filetype plugin indent on    
 
@@ -56,10 +59,15 @@ let g:flake8_quickfix_height=7
 " autocmd BufWritePost *.py call Flake8()
 
 " Commentary plugin
-autocmd BufNewFile,BufRead *.json set ft=javascript
-autocmd FileType python setlocal commentstring=#\ %s
+autocmd BufNewFile,BufRead *.json set ft=json
+autocmd FileType python,yaml,yml,puppet setlocal commentstring=#\ %s
+autocmd FileType python,yaml,yml,pp setlocal commentstring=#\ %s
 autocmd FileType sh setlocal commentstring=#\ %s
 autocmd FileType vim setlocal commentstring=\"\ %s
 
 " Ansible plugin
 let g:ansible_unindent_after_newline = 1
+
+" CTRLP
+map <leader>b :CtrlPBuffer<cr>
+
