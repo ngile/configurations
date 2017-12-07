@@ -26,16 +26,12 @@ bindkey '^[[1;5C' forward-word
 
 HOSTNAME="`hostname`"
 
-parse_git_branch () {
-	git symbolic-ref --short HEAD 2> /dev/null
-}
-
-
 
 autoload -Uz vcs_info
-zstyle ':vcs_info:*' formats '%c%u[%b]'
-zstyle ':vcs_info:*' enable git svn
+
 zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:git*+set-message:*' hooks git-st git-stash
+zstyle ':vcs_info:*' formats " %{$fg[cyan]%}[%s:%b%{$fg[red]%}%m%c%u%{$reset_color%}%{$fg[cyan]%}]%{$reset_color%}"
 zstyle ':vcs_info:*' stagedstr '!'
 zstyle ':vcs_info:*' unstagedstr '?'   
 precmd () {
@@ -44,13 +40,9 @@ precmd () {
 }
  
 setopt prompt_subst
-PROMPT='%F{brown}%n%F{yellow}:%F{brown}%c %F{yellow}${vcs_info_msg_0_}%(?/%F{grey}/%F{grey})$ % %{$reset_color%}'
-
-#autoload colors; colors
-#export PS1="%{$fg[red]%}%n%{$reset_color%}:%{$fg[green]%}%c%{$reset_color%} \${vcs_info_msg_0_}$ "
-
 
 alias ls="ls --color=auto"
+
 #bindkey \\C-R history-incremental-search-backward
 #bindkey "^A" beginning-of-line # Home
 #bindkey "^E" end-of-line # End
@@ -61,9 +53,17 @@ alias ls="ls --color=auto"
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _complete _ignored
-zstyle :compinstall filename '/home/gkostadi/.zshrc'
+zstyle :compinstall filename '/home/georgi/.zshrc'
 
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-export PATH=$HOME/Programs/bin:/home/georgi/Programs/nodejs/bin:$PATH
+export PATH=$HOME/Programs/bin:/home/georgi/Programs/nodejs/bin:$PATH:/opt/puppetlabs/bin
+export EDITOR=/usr/bin/vim
+export VISUAL=/usr/bin/vim
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+if [ $UID -eq 0 ]; then NCOLOR="red"; else NCOLOR="blue"; fi
+
+PROMPT='%{$terminfo[bold]$fg[$NCOLOR]%}%c%{$reset_color%}${vcs_info_msg_0_}%{$terminfo[bold]$fg[$NCOLOR]%}➤ %{$reset_color%}'
