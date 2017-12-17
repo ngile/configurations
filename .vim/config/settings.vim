@@ -73,6 +73,7 @@ set nu
 
 set cursorcolumn
 set cursorline
+
 set scrolloff=2
 set makeprg=python\ %
 set path+=**
@@ -107,3 +108,5 @@ function! TextConfig()
 endfunction
 
 hi Normal guibg=NONE ctermbg=NONE
+" hi CursorLine term=bold cterm=bold guibg=NONE 
+hi NonText ctermbg=none
