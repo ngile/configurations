@@ -1,0 +1,93 @@
+*foreground: #c4c4c4
+!*foreground_bold: #a8a19f
+*cursor: #21a7e3
+
+*background:       #000000
+
+!!*color0:  #9aa3a3
+!!*color1:  #970b16
+!!*color2:  #07962a
+!!*color3:  #d06b00
+!!
+!
+!*color4:  #89d1ec
+!*color12: #89d1ec
+!*color5:  #e94691
+
+!*color6:  #89d1ec
+!*color7:  #9aa3a3
+!*color8:  #666666
+!*color9:  #de0000
+!*color10: #87d5a2
+!*color11: #f1d007
+
+!*color13: #ffa29f
+!*color14: #1cfafe
+!*color15: #9aa3a3
+
+! Default
+! 0: black
+*color0:  #222222
+*color8:  #222222
+! 1: red
+*color1:  #9f6767
+*color9:  #9f6767
+! 2: green
+*color2: #3CB371
+*color10: #3CB371
+!!*color2:  #92ac68
+!!*color10: #92ac68
+! 3: yellow
+*color3:  #d0d293
+*color11: #d0d293
+! 4: blue
+*color4:  #89d1ec
+*color12: #89d1ec
+! 5: magenta
+*color5:  #bb77a4
+*color13: #bb77a4
+! 6: cyan
+*color6:  #77bbb5
+*color14: #77bbb5
+! 7: white
+*color7:  #ffffff
+*color15: #ffffff
+URxvt.intensityStyles:	false
+URxvt*inheritPixmap: true
+URxvt*transparent: true
+! URxvt*shading: 0 to 99 darkens, 101 to 200 lightens
+URxvt*shading: 15
+!URxvt.background:       [90]#000000
+URxvt.depth:		32
+URxvt.font: 		xft:Terminus:size=13, xft:Inconsolata\ for\ Powerline:size=13
+URxvt.boldfont:     xft:Terminus:pixelsize=13
+Xft.antialias:  true
+
+URxvt.scrollBar:	false
+URxvt.cursorColor:	#89d1ec
+URxvt.cursorUnderline: 1
+URxvt.perl-ext-common: default,selection-to-clipboard,matcher,keyboard-select,resize-font
+URxvt.matcher.button:	1
+URxvt.resize-font.smaller:	C-Down
+URxvt.resize-font.bigger:	C-Up
+
+URxvt.keysym.M-u:     perl:url-select:select_next
+URxvt.url-launcher:   /usr/bin/qutebrowser
+URxvt.underlineURLs:  True
+URxvt.matcher.button: 1 
+URxvt.keysym.M-Escape:perl:keyboard-select:activate
+URxvt.keysym.Control-Shift-V:     perl:pasta:paste
+! Comment this if you don't want copy when text is selected
+URxvt.clipboard.autocopy: true
+
+URxvt.colorUL:		#4682B4
+
+
+
+!Xterm escapes, word by word movement
+URxvt.keysym.Control-Left:    \033[1;5D
+URxvt.keysym.Control-Right:    \033[1;5C
+
+
+
+
