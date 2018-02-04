@@ -33,7 +33,8 @@ nmap { {zz
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader=","
 map <leader>q :qa!<cr>
-map <leader>l :nohl<cr>\|:call flake8#Flake8UnplaceMarkers() <cr>
+map <leader>lp :nohl<cr>\|:call flake8#Flake8UnplaceMarkers() <cr>
+map <leader>l :nohl<cr>
 noremap <leader><Tab> <C-W><C-W>
 
 
@@ -42,3 +43,12 @@ noremap <leader><Tab> <C-W><C-W>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " nnoremap <S-j> :m .+1<CR>==
 " nnoremap <S-k> :m .-2<CR>==
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                Moving around splits                                "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <C-L> <C-W>l
+map <C-H> <C-W>h
+map <C-J> <C-W>j
+map <C-K> <C-W>k

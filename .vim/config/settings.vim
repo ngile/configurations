@@ -75,7 +75,7 @@ set cursorcolumn
 set cursorline
 
 set scrolloff=2
-set makeprg=python\ %
+set makeprg=python3\ %
 set path+=**
 
 set timeout timeoutlen=3000 ttimeoutlen=100
@@ -100,12 +100,6 @@ set pastetoggle=<F2>
 " augroup END
 
 autocmd FileType text,markdown call TextConfig()
-
-function! TextConfig()
-    set spell
-    hi SpellBad cterm=underline ctermfg=yellow
-    source ~/.vim/abbrev.vim
-endfunction
 
 hi Normal guibg=NONE ctermbg=NONE
 " hi CursorLine term=bold cterm=bold guibg=NONE 

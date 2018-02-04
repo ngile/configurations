@@ -12,3 +12,8 @@ if has("autocmd")
       au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
+function! TextConfig()
+    set spell
+    hi SpellBad cterm=underline ctermfg=yellow
+    source ~/.vim/abbrev.vim
+endfunction
