@@ -22,7 +22,8 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'iamcco/markdown-preview.vim'
 Plugin 'puppetlabs/puppet-syntax-vim'
 Plugin 'Rykka/riv.vim'
-Plugin 'yuttie/comfortable-motion.vim'
+Plugin 'terryma/vim-multiple-cursors'
+" Plugin 'yuttie/comfortable-motion.vim'
 Plugin 'majutsushi/tagbar'
 call vundle#end()           
 filetype plugin indent on    
@@ -69,7 +70,7 @@ autocmd FileType vim setlocal commentstring=\"\ %s
 let g:ansible_unindent_after_newline = 1
 
 " CTRLP
-map <leader>b :CtrlPBuffer<cr>
+map <leader>bl :CtrlPBuffer<cr>
 
 " NERDTree
 nmap <leader>e :NERDTreeToggle<CR>
