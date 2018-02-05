@@ -24,6 +24,7 @@ Plugin 'puppetlabs/puppet-syntax-vim'
 Plugin 'Rykka/riv.vim'
 Plugin 'terryma/vim-multiple-cursors'
 " Plugin 'yuttie/comfortable-motion.vim'
+Plugin 'martinda/Jenkinsfile-vim-syntax'
 Plugin 'majutsushi/tagbar'
 call vundle#end()           
 filetype plugin indent on    
