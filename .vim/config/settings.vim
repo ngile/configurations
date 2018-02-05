@@ -60,7 +60,6 @@ set shiftwidth=4
 set shiftround
 set expandtab
 set smarttab
-
 " Colors
 set encoding=utf8
 " Use Unix as the standard file type

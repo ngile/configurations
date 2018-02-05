@@ -34,6 +34,7 @@ nmap { {zz
 let mapleader=","
 map <leader>nhp :nohl<cr>\|:call flake8#Flake8UnplaceMarkers() <cr>
 map <leader>nhn :nohl<cr>
+imap ii <Esc>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -46,9 +47,11 @@ map <leader>nhn :nohl<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                Moving around splits                                "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <C-L> <C-W>l<C-W>|
-map <C-H> <C-W>h<C-W>|
+map <C-L> <C-W>l<C-W>\|
+map <C-H> <C-W>h<C-W>\|
 map <C-J> <C-W>j<C-W>_
 map <C-K> <C-W>k<C-W>_
 map <leader>bo :only<cr>
 map <leader>bw :bw<cr>
+map <leader>bh <C-W>S
+map <leader>bv <C-W>v
