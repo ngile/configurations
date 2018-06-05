@@ -20,12 +20,13 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'iamcco/markdown-preview.vim'
-Plugin 'puppetlabs/puppet-syntax-vim'
-Plugin 'Rykka/riv.vim'
+" Plugin 'puppetlabs/puppet-syntax-vim'
 Plugin 'terryma/vim-multiple-cursors'
 " Plugin 'yuttie/comfortable-motion.vim'
 Plugin 'martinda/Jenkinsfile-vim-syntax'
+Plugin 'greyblake/vim-preview'
 Plugin 'majutsushi/tagbar'
+Plugin 'morhetz/gruvbox'
 call vundle#end()           
 filetype plugin indent on    
 
@@ -45,7 +46,7 @@ let g:mkdp_path_to_chrome = "firefox-esr"
 let g:mkdp_auto_open = 1
 
 " Snippets
-let g:UltiSnipsExpandTrigger="<s-tab>"
+"let g:UltiSnipsExpandTrigger="<s-tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " let g:UltiSnipsEditSplit="vertical"

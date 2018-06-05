@@ -34,7 +34,7 @@ nmap { {zz
 let mapleader=","
 map <leader>nhp :nohl<cr>\|:call flake8#Flake8UnplaceMarkers() <cr>
 map <leader>nhn :nohl<cr>
-imap ii <Esc>
+imap jk <Esc>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
