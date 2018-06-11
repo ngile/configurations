@@ -1,0 +1,53 @@
+browser /usr/bin/qutebrowser
+max-items 100
+
+# Filters
+
+auto-reload yes
+player mpv
+refresh-on-startup no
+suppress-first-reload yes
+reload-time 120
+# html-renderer "w3m -dump -T text/html"
+html-renderer "w3m -I %{charset} -T text/html"
+
+# key binding --------------------
+
+unbind-key j
+unbind-key k
+unbind-key J
+unbind-key K
+bind-key j down all
+bind-key k up all
+bind-key J next-feed
+bind-key K prev-feed
+
+unbind-key g all
+bind-key g home all
+unbind-key G all
+bind-key G end all
+
+unbind-key SPACE all
+unbind-key ^U all
+unbind-key b all
+bind-key ^D pagedown all
+bind-key ^U pageup all
+
+# formatting and colorization ------------------------------------------
+
+highlight article "^Feed:.*" color174 default
+highlight article "^Title:.*" color223 color108 bold
+highlight article "^Author:.*" color114 default
+highlight article "^Link:.*" color116 default
+highlight article "^Date:.*" color223 default
+highlight article "\\[[0-9][0-9]*\\]" color66 default bold
+highlight article "\\[image [0-9][0-9]*\\]" color109 default bold
+highlight article "\\[embedded flash: [0-9][0-9]*\\]" color66 default bold
+
+color listnormal_unread color244 color234 bold
+color listfocus  color166 color235
+color listfocus_unread  color166 color235
+color info       color136 color235
+# color background color244 color234 invis
+# color article    color244 color234
+color article white color234
