@@ -239,6 +239,7 @@ exec --no-startup-id setxkbmap -model pc105 -layout us,bg -variant ,phonetic -op
 exec --no-startup-id blueman-applet
 #exec --no-startup-id xautolock -time 1 -locker "~/.config/i3/lock.sh"
 
+bindsym $mod+ctrl+x exec "~/.config/i3/shutdown.sh"
 bindsym $mod+shift+x exec "~/.config/i3/lock.sh"
 
 set $mode_launcher Launch: [c]yromium [e]pcmanf 
