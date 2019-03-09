@@ -7,7 +7,7 @@ autocmd! bufwritepost .vimrc source %
 "filetype plugin on
 "filetype plugin indent on
 
-set complete=.,w,b,u,t,i,kspell
+set mouse=a
 syntax on
 set laststatus=2
 " Height of the command bar
@@ -66,7 +66,8 @@ set encoding=utf8
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 " colo wombat256mod
-colo gruvbox
+colo jellybeans
+" colo gruvbox
 
 
 set rnu
@@ -105,5 +106,3 @@ autocmd FileType text,markdown call TextConfig()
 hi Normal guibg=NONE ctermbg=NONE
 " hi CursorLine term=bold cterm=bold guibg=NONE 
 hi NonText ctermbg=none
-
-autocmd FileType yaml,yml setlocal ts=2 sts=2 sw=2 expandtab

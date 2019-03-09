@@ -31,7 +31,9 @@ nmap { {zz
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                Custom maps                                 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let mapleader=","
+" let mapleader=","
+map <SPACE> <leader>
+" noremap \ ,
 map <leader>nhp :nohl<cr>\|:call flake8#Flake8UnplaceMarkers() <cr>
 map <leader>nhn :nohl<cr>
 imap jk <Esc>
