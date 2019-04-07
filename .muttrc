@@ -23,29 +23,31 @@ mono underline underline
 mono indicator reverse
 
 
-# colors
-color normal		color253	color234 # mod
-color indicator    	color230     	color238
-color status       	color101     	color16
-color tree         	color208      	color234 
-color signature    	color102      	color234 
-color message      	color253      	default
-color attachment	color253      	color234 
-color error        	color30      	color234 
-color tilde        	color130     	default 
-color search       color100     default 
-color markers      color138     default 
-color hdrdefault    color30     color233 
-color header        color132        color233    '^date:'
-color header        color153        color233    '^(to|cc|bcc):'
-color header        color120        color233    '^from:'
-color header        color178        color233    '^subject:'
-color header        color31         color233    '^user-agent:'
-color header        color29         color233    '^reply-to:'
+# # colors
+# color normal		color253	color234 # mod
+# color indicator    	color230     	color238
+# color status       	color101     	color16
+# color tree         	color208      	color234 
+# color signature    	color102      	color234 
+# color message      	color253      	default
+# color attachment	color253      	color234 
+# color error        	color30      	color234 
+# color tilde        	color130     	default 
+# color search       color100     default 
+# color markers      color138     default 
+# color hdrdefault    color30     color233 
+# color header        color132        color233    '^date:'
+# color header        color153        color233    '^(to|cc|bcc):'
+# color header        color120        color233    '^from:'
+# color header        color178        color233    '^subject:'
+# color header        color31         color233    '^user-agent:'
+# color header        color29         color233    '^reply-to:'
 
-color body brightred default [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
-color body brightblue default (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+
-color normal default default
+# color body brightred default [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
+# color body brightblue default (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+
+# color normal default default
+
+source ~/.mutt/themes/mutt-colors-solarized-dark-16.muttrc
 
 bind editor <space> noop
 bind index G last-entry
