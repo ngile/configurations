@@ -62,13 +62,17 @@ set shiftround
 set expandtab
 set smarttab
 " Colors
+"
+"
+
+
 set encoding=utf8
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 " colo wombat256mod
-colo jellybeans
-" colo gruvbox
-
+" colo github
+" colo jellybeans
+colo gruvbox
 
 set rnu
 set nu
@@ -82,7 +86,10 @@ set path+=**
 
 set timeout timeoutlen=3000 ttimeoutlen=100
 
-set background=dark
+set background=light
+
+set termguicolors
+
 if &term =~ '256color'
     " Disable Background Color Erase (BCE) so that color schemes
     " work properly when Vim is used inside tmux and GNU screen.
@@ -103,6 +110,6 @@ set pastetoggle=<F2>
 
 autocmd FileType text,markdown call TextConfig()
 
-hi Normal guibg=NONE ctermbg=NONE
+" hi Normal guibg=NONE ctermbg=NONE
 " hi CursorLine term=bold cterm=bold guibg=NONE 
-hi NonText ctermbg=none
+" hi NonText ctermbg=none

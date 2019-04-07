@@ -7,10 +7,12 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'vim-syntastic/syntastic'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-commentary'
+Plugin 'romainl/flattened'
 Plugin 'tpope/vim-surround'
 Plugin 'nvie/vim-flake8'
 Plugin 'vim-airline/vim-airline-themes'
@@ -20,12 +22,13 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'iamcco/markdown-preview.vim'
-Plugin 'puppetlabs/puppet-syntax-vim'
 Plugin 'Rykka/riv.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'morhetz/gruvbox'
-Plugin 'arcticicestudio/nord-vim'
-Plugin 'rakr/vim-one'
+Plugin 'crusoexia/vim-monokai'
+Plugin 'michalbachowski/vim-wombat256mod'
+Plugin 'encody/nvim'
+Plugin 'rafi/awesome-vim-colorschemes'
 Plugin 'nanotech/jellybeans.vim'
 " Plugin 'yuttie/comfortable-motion.vim'
 Plugin 'martinda/Jenkinsfile-vim-syntax'
@@ -83,3 +86,20 @@ nmap <leader>e :NERDTreeToggle<CR>
 " Tagbar
 nmap <leader>t :TagbarToggle<CR>
 
+" Easymotion
+"
+map <space><space> <leader><leader>
+
+" Syntastic
+ 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_check_on_open = 0
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_highlighting = 0
+let g:syntastic_auto_jump = 3
+let g:syntastic_loc_list_height = 5
